@@ -26,16 +26,6 @@ void Xuat(PhanSo x)
 // 4. Tìm ước chung lớn nhất
 int findGCD(int a, int b)
 {
-    // Ước của 12 = {1,2,3,4,6,12}
-    // Ước của 18 = {1,2,3,6,9,18}
-    // Ước chung lớn nhất 12, 18 GCD(12, 18) = 6
-
-    // Cách tìm: a = 12, b = 18
-    // Step 1: du = 12%18 = 12, gan a = b = 18, b = du = 12
-    // Step 2: du = 18%12 = 6, gan a = b = 12, b = du = 6
-    // Step 3: du = 12%6 = 0, gan a = b = 6, b = du = 0
-    // Dung thuat toan b = 0
-
     while (b != 0)
     {
         int du = a % b;
