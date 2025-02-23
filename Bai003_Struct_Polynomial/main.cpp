@@ -16,6 +16,7 @@ struct DaThucBac4 {
     int x0;
 };
 
+
 //nhap da thuc 
 void nhapDaThuc(DaThuc &dt) {
     cin >> dt.x2 >> dt.x1 >> dt.x0;
