@@ -4,6 +4,12 @@
 
 using namespace std;
 
+//constructor
+point::point(int a, int b) {
+    this->x = a;
+    this->y = b;
+}
+
 //ham nhap
 void point::Nhap() {
     cin >> x >> y;

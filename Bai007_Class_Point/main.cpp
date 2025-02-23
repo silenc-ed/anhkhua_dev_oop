@@ -9,16 +9,17 @@ int main() {
     cout << "nhap toa do (x; y): ";
     locate_1.Nhap();
     while (1) {
+        cout << "---------------------------- \n";
         cout << "chon viec ban muon lam: \n";
         cout << "---------------------------- \n";
         cout << "1. di chuyen theo vector \n";
         cout << "2. khoang cach voi 1 diem khac \n";
         cout << "3. thoat \n";
         cout << "---------------------------- \n";
-        cout << "nhap so: \n";
-        int x; cin >> x;
+        cout << "nhap so: ";
+        int x; ;
 
-        while (x < 1 || x > 3) {
+        while (!(cin >> x) || !(x > 0 && x < 4)) {
             cout << "nhap lai di dcmm: ";
             cin >> x;
         }
@@ -29,6 +30,7 @@ int main() {
             point vector; 
             vector.Nhap();
             (locate_1.move(vector)).Xuat();
+            cout << endl;
         }
 
         else if (x == 2) {
@@ -37,6 +39,7 @@ int main() {
             point direct;
             direct.Nhap();
             cout << "khoang cach la: " << locate_1.distance(direct);
+            cout << endl;
         }
         
         else if (x == 3) {
