@@ -27,6 +27,10 @@ int main()
     PhanSo PhanSoTong = ps1.tongPhanSo(ps2);
     PhanSoTong.Xuat();
 
+    cout << "Hieu hai phan so: ";
+    PhanSo PhanSoHieu = ps1.hieuPhanSo(ps2);
+    PhanSoHieu.Xuat();
+
     cout << "Tich hai phan so: ";
     PhanSo PhanSoTich = ps1.tichPhanSo(ps2);
     PhanSoTich.Xuat();
