@@ -24,7 +24,7 @@ using namespace std;
 
 struct Time{
     int gio;
-    int phut;
+    int phut; 
     int giay;
 };
 

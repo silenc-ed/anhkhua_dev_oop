@@ -29,11 +29,13 @@ class DaThuc{
         int x1;
         int x0;
     public:
-        DaThuc(int x2 = 0, int x1 = 0, int x0 = 0);
+        DaThuc (int x2 = 0, int x1 = 0, int x0 = 0);
         void nhapDaThuc();
         void in();
         DaThuc tongDaThuc(DaThuc fx);
         DaThuc hieuDaThuc(DaThuc fx);
+        friend class DaThucBac4;
+        int f0();
 };
 
 class DaThucBac4 {
@@ -44,7 +46,9 @@ class DaThucBac4 {
         int x1;
         int x0;
     public:
-        DaThucBac4 tichDaThuc(DaThuc fx1, DaThuc fx2);
+        DaThucBac4(int x4 = 0, int x3 = 0, int x2 = 0, int x1 = 0, int x0 = 0);
+        DaThucBac4 tichDaThuc(DaThuc dt1, DaThuc dt2);
         void inDaThucBac4();
+        int f0();
 };
 
