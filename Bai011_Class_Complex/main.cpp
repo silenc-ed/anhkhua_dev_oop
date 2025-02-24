@@ -9,12 +9,12 @@ int main () {
     a.nhap();
     b.nhap();
     cout << "Tong: ";
-    (tong(a, b)).in();
+    (a.tong(b)).in();
     cout << endl << "Hieu: ";
-    (hieu(a, b)).in();
+    (a.hieu(b)).in();
     cout << endl << "Tich: ";
-    (tich(a, b)).in();
+    (a.tich(b)).in();
     cout << endl << "Thuong: ";
-    (thuong(a, b)).in();
+    (a.thuong(b)).in();
     return 0;
 }

@@ -24,14 +24,14 @@
 
 class sophuc{
     private:
-        int thuc, ao;
+        double thuc, ao;
     public:
-        sophuc(int thuc = 0, int ao = 0);
+        sophuc(double thuc = 0, double ao = 0);
         void nhap();
         void in();
-        sophuc tong(sophuc a, sophuc b);
-        sophuc hieu(sophuc a, sophuc b);
-        sophuc tich(sophuc a, sophuc b);
-        sophuc thuong(sophuc a, sophuc b);
+        sophuc tong(sophuc a);
+        sophuc hieu(sophuc a);
+        sophuc tich(sophuc a);
+        sophuc thuong(sophuc a);
 };
 

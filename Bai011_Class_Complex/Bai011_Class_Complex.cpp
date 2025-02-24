@@ -25,6 +25,11 @@ using namespace std;
 //           佛祖保佑         永无BUG
 //               没有眼泪没有恐惧
 
+sophuc::sophuc (double thuc, double ao) {
+    this->thuc = thuc;
+    this->ao = ao;
+}
+
 void sophuc::nhap() {
     cin >> thuc >> ao;
 }
@@ -40,30 +45,30 @@ void sophuc::in() {
     else cout << " + " << ao <<"i";
 }
 
-sophuc sophuc::tong(sophuc a, sophuc b) {
+sophuc sophuc::tong(sophuc b) {
     sophuc c;
-    c.thuc = a.thuc + b.thuc;
-    c.ao = a.ao + b.ao;
+    c.thuc = thuc + b.thuc;
+    c.ao = ao + b.ao;
     return c; 
 }
 
-sophuc sophuc::hieu(sophuc a, sophuc b) {
+sophuc sophuc::hieu(sophuc b) {
     sophuc c;
-    c.thuc = a.thuc - b.thuc;
-    c.ao = a.ao - b.ao;
+    c.thuc = thuc - b.thuc;
+    c.ao = ao - b.ao;
     return c; 
 }
 
-sophuc sophuc::tich(sophuc a, sophuc b) {
+sophuc sophuc::tich(sophuc b) {
     sophuc c;
-    c.thuc = a.thuc * b.thuc - a.ao * b.ao;
-    c.ao = b.thuc * a.ao + b.ao * a.thuc;
+    c.thuc = thuc * b.thuc - ao * b.ao;
+    c.ao = b.thuc * ao + b.ao * thuc;
     return c; 
 }
 
-sophuc sophuc::thuong(sophuc a, sophuc b) {
+sophuc sophuc::thuong(sophuc b) {
     sophuc c;
-    c.thuc = (a.thuc * b.thuc + a.ao * b.ao) / (b.thuc * b.thuc + b.ao * b.ao);
-    c.ao = (b.thuc * a.ao - b.ao * a.thuc) / (b.thuc * b.thuc + b.ao * b.ao);
+    c.thuc = (thuc * b.thuc + ao * b.ao) / (b.thuc * b.thuc + b.ao * b.ao);
+    c.ao = (b.thuc * ao - b.ao * thuc) / (b.thuc * b.thuc + b.ao * b.ao);
     return c; 
 }
