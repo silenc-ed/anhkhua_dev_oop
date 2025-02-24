@@ -72,6 +72,10 @@ void rutGonPhanSo(PhanSo &ps)
     }
 }
 
+PhanSo timMax(PhanSo a, PhanSo b) {
+    return (float(a.tuso / a.mauso) >= float(b.tuso / b.mauso)) ? a : b;
+}
+
 // 6. Tổng hiệu tích thương hai phân số
 PhanSo tongPhanSo(PhanSo ps1, PhanSo ps2)
 {
@@ -81,7 +85,18 @@ PhanSo tongPhanSo(PhanSo ps1, PhanSo ps2)
 
     rutGonPhanSo(PhanSoTong);
     return PhanSoTong;
+} 
+
+PhanSo hieuPhanSo(PhanSo ps1, PhanSo ps2)
+{
+    PhanSo PhanSoTong;
+    PhanSoTong.tuso = ps1.tuso * ps2.mauso + ps2.tuso * ps1.mauso;
+    PhanSoTong.mauso = ps1.mauso * ps2.mauso;
+
+    rutGonPhanSo(PhanSoTong);
+    return PhanSoTong;
 }
+
 
 PhanSo tichPhanSo(PhanSo ps1, PhanSo ps2) {
     PhanSo PhanSoTich;
@@ -104,21 +119,24 @@ PhanSo thuongPhanSo(PhanSo ps1, PhanSo ps2) {
 int main()
 {
     PhanSo ps1, ps2;
-    cout << "Nhap phan so thu 1" << endl;
+    cout << "Nhap phan so thu 1: " << endl;
     Nhap(ps1);
-    cout << "Nhap phan so thu 2" << endl;
+    cout << "Nhap phan so thu 2: " << endl;
     Nhap(ps2);
     cout << "Hai phan so vua nhap la: " << endl;
     Xuat(ps1);
     Xuat(ps2);
 
-    cout << "Rut gon phan so 1" << endl;
+    cout << "Rut gon phan so 1: ";
     rutGonPhanSo(ps1);
     Xuat(ps1);
 
-    cout << "Rut gon phan so 2" << endl;
+    cout << "Rut gon phan so 2: ";
     rutGonPhanSo(ps2);
     Xuat(ps2);
+
+    cout << "Phan So Lon Hon: ";
+    Xuat(timMax(ps1, ps2));
 
     // Tổng hiệu tích thương hai phân số
     cout << "Tong hai phan so: ";
