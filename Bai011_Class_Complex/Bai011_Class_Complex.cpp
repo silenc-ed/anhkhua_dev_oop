@@ -35,12 +35,19 @@ void sophuc::nhap() {
 }
 
 void sophuc::in() {
-    cout << thuc;
+    int c = 0;
+    if (thuc != 0) {
+        cout << thuc;
+        c++;
+    }
     if (ao < 0) {
         cout << " - " << -ao <<"i";
     }
     else if (ao == 0) {
-        return;
+        if (c == 0) {
+            cout << "0";
+            return;
+        }
     }
     else cout << " + " << ao <<"i";
 }
