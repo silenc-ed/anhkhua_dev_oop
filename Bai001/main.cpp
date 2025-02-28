@@ -41,7 +41,9 @@ void Nhap(PhanSo &x)
 // 3. Hàm xuất phân số
 void Xuat(PhanSo x)
 {
+    if (x.mauso != 1)
     cout << x.tuso << "/" << x.mauso << endl;
+    else cout << x.mauso << endl;
 }
 
 // 4. Tìm ước chung lớn nhất
