@@ -1,5 +1,7 @@
 #pragma once
 
+#define int double
+
 // Created by _silenc.ed on 2025-02-23
 //                   _ooOoo_
 //                  o8888888o
