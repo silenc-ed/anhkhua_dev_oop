@@ -15,6 +15,7 @@ quanli::quanli(string id, string name, int age, float math, float literature, fl
     this->english = english;
 }
 
+//khúc này em chả hiểu tại sao nó k chạy như bình thường đc
 void quanli::nhap() { 
     cin.ignore();
     cout << "Nhap ten: ";
