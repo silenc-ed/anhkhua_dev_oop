@@ -1,2 +1,9 @@
 *.exe
 .vscode/
+.vs/
+*.vsdx
+*.db
+*.json
+*.ipch
+*.VC.db
+*gitignore
