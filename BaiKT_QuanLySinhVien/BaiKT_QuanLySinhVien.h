@@ -40,3 +40,4 @@ class quanli {
         void nhap();
         void xuat();
 };
+

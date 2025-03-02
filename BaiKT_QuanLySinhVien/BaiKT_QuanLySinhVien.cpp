@@ -4,67 +4,72 @@
 #include <limits>
 #include <string>
 
+
 using namespace std;
 
-quanli::quanli(string id, string name, int age, float math, float literature, float english) {
+quanli::quanli (string id, string name, int age, float math, float literature, float english) {
     this->id = id;
     this->name = name;
     this->age = age;
     this->math = math;
     this->literature = literature;
     this->english = english;
+
 }
 
-void quanli::nhap() { 
+void quanli::nhap() {
+    cout << "nhap ten: ";
     cin.ignore();
-    cout << "Nhap ten: ";
     getline(cin, name);
 
-    cout << "Nhap ID: ";
+    cout << "nhap ID: ";
     getline(cin, id);
 
-    cout << "Nhap tuoi: ";
-    while (!(cin >> age) || age <= 0) { 
-        cout << "Tuoi khong hop le! Nhap lai: ";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
-
-    cout << "Nhap diem toan: ";
-    while (!(cin >> math) || math < 0 || math > 10) { 
-        cout << "Diem khong hop le! Nhap lai (0-10): ";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
-
-    cout << "Nhap diem van: ";
-    while (!(cin >> literature) || literature < 0 || literature > 10) {
-        cout << "Diem khong hop le! Nhap lai (0-10): ";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
-
-    cout << "Nhap diem anh: ";
-    while (!(cin >> english) || english < 0 || english > 10) {
-        cout << "Diem khong hop le! Nhap lai (0-10): ";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    }
-
+    cout << "nhap tuoi: ";
+    cin >> age;
     cin.ignore();
+	while (age < 0 || age > 100) {
+		cout << "nhap lai: ";
+		cin >> age;
+	}
+    
+
+    cout << "nhap diem toan: "; 
+    cin >> math;
+
+    while (math < 0 || math > 10) {
+        cout << "nhap lai: ";
+        cin >> math;
+    }
+
+    cout << "nhap diem van: "; 
+    cin >> literature;
+    while (literature < 0 || literature > 10) {
+        cout << "nhap lai: ";
+        cin >> literature;
+    }
+
+    cout << "nhap diem anh: "; 
+     
+    cin >> english;
+    while (english < 0 || english > 10) {
+        cout << "nhap lai: ";
+        cin >> english;
+    }
 }
 
 float quanli::gpa() {
-    return ((math * 2) + (literature * 2) + english) / 5;
+    float g;
+    g = ((math * 2) + (literature * 2) + english) / 5;
+    return g;
 }
 
 void quanli::xuat() {
-    cout << "\nThong tin sinh vien:\n";
-    cout << "Ten: " << name << endl;
+    cout << "ten: " << name << endl;
     cout << "ID: " << id << endl;
-    cout << "Tuoi: " << age << endl;
-    cout << "Diem Toan: " << math << endl;
-    cout << "Diem Van: " << literature << endl;
-    cout << "Diem Anh: " << english << endl;
+    cout << "tuoi: " << age << endl;
+    cout << "diem toan: " << math << endl;
+    cout << "diem van: " << literature << endl;
+    cout << "diem anh: " << english << endl;
     cout << "GPA: " << gpa() << endl;
 }
