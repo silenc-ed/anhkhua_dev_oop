@@ -22,7 +22,10 @@ int main() {
         cout << i + 1 << ". " << endl;
         v[i].xuat();
         cout << endl ;
-        if (v[i].gpa() > max) max_pp = i;
+        if (v[i].gpa() > max) {
+            max_pp = i;
+			max = v[i].gpa();
+        }
     }
     if (max_pp != -1) { 
         cout << "diem GPA cao nhat cua: ";
