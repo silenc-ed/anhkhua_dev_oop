@@ -14,12 +14,13 @@ int main() {
     for (int i = 0; i < n; i++) {
         cout << "nhap thong tin sinh vien thu " << i + 1 << ": " << endl;
         quanli temp; 
+        temp.getID(i + 1);
         temp.nhap(); 
         v[i] = temp; 
     }
     
     for (int i = 0; i < n; i++) {
-        cout << i + 1 << ". " << endl;
+        cout << i + 1 << ". " << endl; 
         v[i].xuat();
         cout << endl ;
         if (v[i].gpa() > max) {

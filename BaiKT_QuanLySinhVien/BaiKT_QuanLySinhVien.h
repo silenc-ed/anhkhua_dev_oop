@@ -28,16 +28,17 @@ using namespace std;
 
 class quanli {
     private:
-        string id;
+        int id;
         string name;
         int age;
         float math;
         float literature;
         float english;
     public:
-        quanli(string id = "", string name = "", int age = 0, float math = 0, float literature = 0, float english = 0);
+        quanli(int id = 0, string name = "", int age = 0, float math = 0, float literature = 0, float english = 0);
         float gpa();
         void nhap();
         void xuat();
+        void getID(int a);
 };
 

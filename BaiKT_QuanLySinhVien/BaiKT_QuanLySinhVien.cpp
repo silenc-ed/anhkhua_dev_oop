@@ -7,14 +7,17 @@
 
 using namespace std;
 
-quanli::quanli (string id, string name, int age, float math, float literature, float english) {
+quanli::quanli (int id, string name, int age, float math, float literature, float english) {
     this->id = id;
     this->name = name;
     this->age = age;
     this->math = math;
     this->literature = literature;
     this->english = english;
+}
 
+void quanli::getID(int a) {
+    this->id = a;
 }
 
 void quanli::nhap() {
@@ -22,8 +25,8 @@ void quanli::nhap() {
     cin.ignore();
     getline(cin, name);
 
-    cout << "nhap ID: ";
-    getline(cin, id);
+    // cout << "nhap ID: ";
+    // getline(cin, id);
 
     cout << "nhap tuoi: ";
     cin >> age;
