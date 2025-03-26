@@ -7,7 +7,7 @@
 *.ipch
 *.VC.db
 *.db
-.x64\Debug/
+.x64/Debug/
 .x64/
 *.vcxproj
 *.filters
