@@ -3,78 +3,113 @@
 
 using namespace std;
 
-#define MAX 100 // Kích thước tối đa của danh sách
+#define MAX 100
 
 int main() {
-    person* danhSach[MAX]; // Mảng tĩnh lưu các đối tượng
-    int soLuong = 0; // Số người trong danh sách
-    int choice;
+    person* danhSach[MAX]; // Mảng con trỏ chứa các đối tượng person
+    int soLuong = 0;
+    int luaChon;
 
     do {
-        cout << "\n===== MENU =====";
-        cout << "\n1. Them nguoi moi";
-        cout << "\n2. In danh sach";
+        cout << "\n========================";
+        cout << "\n1. Nhap thong tin moi";
+        cout << "\n2. Chinh sua thong tin";
+        cout << "\n3. Hien thi danh sach";
         cout << "\n0. Thoat";
-        cout << "\nLua chon: ";
-        cin >> choice;
-        cin.ignore(); // Xóa bộ nhớ đệm sau khi nhập số
+        cout << "\n========================";
+        cout << "\nNhap lua chon: ";
+        cin >> luaChon;
+        cin.ignore();
 
-        if (choice == 1) { // THÊM ĐỐI TƯỢNG
+        switch (luaChon) {
+        case 1: { // Nhập dữ liệu mới
             if (soLuong >= MAX) {
                 cout << "Danh sach da day!\n";
-                continue;
+                break;
             }
 
             int type;
-            cout << "\nChon loai nguoi muon them:";
-            cout << "\n1. Sinh Vien";
-            cout << "\n2. Hoc Sinh";
-            cout << "\n3. Cong Nhan";
-            cout << "\n4. Nghe Si";
-            cout << "\n5. Ca Si";
-            cout << "\nLua chon: ";
+            cout << "\nChon loai nguoi:";
+            cout << "\n1. Sinh vien";
+            cout << "\n2. Hoc sinh";
+            cout << "\n3. Cong nhan";
+            cout << "\n4. Nghe si";
+            cout << "\n5. Ca si";
+            cout << "\nNhap loai: ";
             cin >> type;
-            cin.ignore(); // Sửa lỗi bỏ qua dòng khi nhập chuỗi
-
-            person* p = nullptr;
+            cin.ignore();
 
             switch (type) {
-            case 1: p = new sv("", 0, "", "", "", "", 0.0); break;
-            case 2: p = new hs("", 0, "", "", "", 0.0); break;
-            case 3: p = new cn("", 0, "", 0); break;
-            case 4: p = new ns("", 0, "", 0); break;
-            case 5: p = new cs("", 0, "", 0, 0); break;
+            case 1:
+                danhSach[soLuong] = new sv("", 0, "", "", "", "", 0);
+                break;
+            case 2:
+                danhSach[soLuong] = new hs("", 0, "", "", "", 0);
+                break;
+            case 3:
+                danhSach[soLuong] = new cn("", 0, "", 0);
+                break;
+            case 4:
+                danhSach[soLuong] = new ns("", 0, "", 0);
+                break;
+            case 5:
+                danhSach[soLuong] = new cs("", 0, "", 0, 0);
+                break;
             default:
-                cout << "Lua chon khong hop le!\n";
+                cout << "Loai khong hop le!\n";
                 continue;
             }
 
-            if (p) {
-                p->nhap(); // Gọi hàm nhập của đối tượng
-                danhSach[soLuong++] = p; // Lưu vào danh sách
-                cout << "Da them thanh cong!\n";
-            }
+            danhSach[soLuong]->nhap();
+            soLuong++;
+            cout << "\nNhap thanh cong!!";
+            break;
         }
 
-        else if (choice == 2) { // IN DANH SÁCH
+        case 2: { 
+            if (soLuong == 0) {
+                cout << "Danh sach rong!\n";
+                break;
+            }
+
+            cout << "Nhap vi tri can sua (0 - " << soLuong - 1 << "): ";
+            int index;
+            cin >> index;
+            cin.ignore();
+
+            if (index < 0 || index >= soLuong) {
+                cout << "Vi tri khong hop le!\n";
+            }
+            else {
+                cout << "Nhap thong tin moi:\n";
+                danhSach[index]->nhap();
+            }
+            break;
+        }
+
+        case 3: {
             if (soLuong == 0) {
                 cout << "Danh sach rong!\n";
             }
             else {
-                cout << "\n===== DANH SACH NGUOI =====\n";
                 for (int i = 0; i < soLuong; i++) {
                     danhSach[i]->in();
-                    cout << endl;
                 }
             }
+            break;
         }
 
-    } while (choice != 0);
+        case 0:
+            cout << "Thoat chuong trinh.\n";
+            for (int i = 0; i < soLuong; i++) {
+                delete danhSach[i]; 
+            }
+            break;
 
-    // Giải phóng bộ nhớ
-    for (int i = 0; i < soLuong; i++) {
-        delete danhSach[i];
-    }
+        default:
+            cout << "Lua chon khong hop le!\n";
+        }
+    } while (luaChon != 0);
 
     return 0;
 }

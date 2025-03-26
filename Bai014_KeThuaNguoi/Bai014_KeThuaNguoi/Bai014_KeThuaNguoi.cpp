@@ -39,9 +39,9 @@ void person::nhap() {
 
 void person::in() {
 	cout << "--------------------------------\n";
-	cout << "Ho ten: " << name << "\n";
-	cout << "Tuoi  : " << age << "\n";
-	cout << "ID    : " << id << "\n";
+	cout << "Ho ten : " << name << "\n";
+	cout << "Tuoi   : " << age << "\n";
+	cout << "ID     : " << id << "\n";
 }
 
 
@@ -86,12 +86,12 @@ void sv::nhap() {
 
 
 void sv::in() {
-	cout << "======== SINH VIEN ========\n";
 	person::in();
-	cout << "MSSV  : " << mssv << "\n";
-	cout << "Truong: " << truong << "\n";
-	cout << "Nganh : " << nganh << "\n";
-	cout << "GPA   : " << gpa << "\n";
+	cout << "Vai tro: Sinh vien\n";
+	cout << "MSSV   : " << mssv << "\n";
+	cout << "Truong : " << truong << "\n";
+	cout << "Nganh  : " << nganh << "\n";
+	cout << "GPA    : " << gpa << "\n";
 	cout << "===========================\n";
 }
 
@@ -131,11 +131,11 @@ void hs::nhap() {
 }
 
 void hs::in() {
-	cout << "======== HOC SINH ========\n";
 	person::in();
-	cout << "Truong: " << truong << "\n";
-	cout << "Lop   : " << lop << "\n";
-	cout << "DTB   : " << dtb << "\n";
+	cout << "Vai tro: Hoc sinh\n";
+	cout << "Truong : " << truong << "\n";
+	cout << "Lop    : " << lop << "\n";
+	cout << "DTB    : " << dtb << "\n";
 	cout << "==========================\n";
 }
 
@@ -166,8 +166,8 @@ void cn::nhap() {
 
 
 void cn::in() {
-	cout << "======== CONG NHAN ========\n";
 	person::in();
+	cout << "Vai tro : Cong nhan\n";
 	cout << "Ngay lam: " << workingDay << "\n";
 	cout << "Luong   : " << luong << "\n";
 	cout << "===========================\n";
@@ -194,9 +194,9 @@ void ns::nhap() {
 
 
 void ns::in() {
-	cout << "======== NGHE SI ========\n";
 	person::in();
-	cout << "Bai hat: " << baihat << "\n";
+	cout << "Vai tro: Nghe si\n";
+	cout << "so bai hat: " << baihat << "\n";
 	cout << "=========================\n";
 }
 
@@ -218,7 +218,7 @@ int cs::getFan() {
 void cs::nhap() {
 	person::nhap();
 
-	cout << "So ca khuc: ";
+	cout << "So luong ca khuc: ";
 	cin >> cakhuc;
 	cin.ignore();
 
@@ -229,9 +229,9 @@ void cs::nhap() {
 
 
 void cs::in() {
-	cout << "======== CA SI ========\n";
 	person::in();
-	cout << "Ca khuc: " << cakhuc << "\n";
+	cout << "Vai tro: Ca si\n";
+	cout << "So luong ca khuc: " << cakhuc << "\n";
 	cout << "Fan    : " << fan << "\n";
 	cout << "=======================\n";
 }

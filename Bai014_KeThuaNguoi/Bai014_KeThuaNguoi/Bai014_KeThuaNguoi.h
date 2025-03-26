@@ -16,8 +16,8 @@ public:
 	string getName();
 	int getAge();
 	string getID();
-	void nhap();
-	void in();
+	virtual void nhap();
+	virtual void in();
 };
 
 class sv : public person
