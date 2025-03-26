@@ -9,3 +9,4 @@
 *.db
 .x64/
 *.vcxproj
+*.sln
