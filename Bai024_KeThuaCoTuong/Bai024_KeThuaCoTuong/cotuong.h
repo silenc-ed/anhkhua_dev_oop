@@ -1,65 +1,57 @@
 #pragma once
-//#include "cotuong.cpp"
 #include <iostream>
-#include <string>
+#include <vector>
 
 using namespace std;
 
-struct toado {
-	int x, y;
-};
-
-string board[10][9];
-
-class quanco
-{
+class chess {
 protected:
-	toado vitri;
-	string color;
+    string color;
+    int x, y;
 public:
+    chess(string color, int x, int y);
+    virtual ~chess() {};
+    virtual void move() = 0;
 };
 
-class TUONG : public quanco {
+class king : public chess {
 public:
-	toado dichuyen() {
-		toado vitriquan, vitriden;
-		nhap(vitriquan);
-
-	}
-	
+    king(string color, int x, int y) : chess(color, x, y) {};
+    void move();
 };
 
-class si : public quanco {
+class si : public chess {
 public:
-	toado dichuyen;
+    si(string color, int x, int y) : chess(color, x, y) {};
+    void move();
 };
 
-class tuong : public quanco {
+class tuong : public chess {
 public:
-	toado dichuyen;
+    tuong(string color, int x, int y) : chess(color, x, y) {};
+    void move();
 };
 
-class ma : public quanco {
+class phao : public chess {
 public:
-	toado dichuyen;
+    phao(string color, int x, int y) : chess(color, x, y) {};
+    void move();
 };
 
-class phao : public quanco {
+class ma : public chess {
 public:
-	toado dichuyen;
-	toado anquan;
+    ma(string color, int x, int y) : chess(color, x, y) {};
+    void move();
 };
 
-class xe : public quanco {
+class xe : public chess {
 public:
-	toado dichuyen;
+    xe(string color, int x, int y) : chess(color, x, y) {};
+    void move();
 };
 
-class tot : public quanco {
+class tot : public chess {
 public:
-	toado dichuyen;
-	bool qua_song;
-};
-
-class nothing : public quanco {
+    tot(string color, int x, int y) : chess(color, x, y) {};
+    void move();
 };

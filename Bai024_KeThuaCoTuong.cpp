@@ -90,6 +90,7 @@ int menu1() {
     cin >> a;
     return a;
 }
+
 int menu2() {
     cout << "0. Tro lai\n1. Thoat\n";
     cout << "=============================\n";
