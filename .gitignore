@@ -1,3 +1,4 @@
+//đuôi file cần ingore 
 *.exe
 .vscode/
 .vs/
@@ -7,13 +8,19 @@
 *.ipch
 *.VC.db
 *.db
-
-Debug
-
 *.vcxproj
 *.filters
 *.user
 *.sln
 *.pdb
 
+//ingore file cụ thể
 test.cpp
+Debug
+
+//cách xài (làm theo từng bước)
+//1. git rm -r --cached .  
+//2. git commit -m ("test")
+//3. git add .
+//4. git add .
+//5. vào GIthub Desktop và push lên
