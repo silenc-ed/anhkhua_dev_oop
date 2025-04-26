@@ -9,10 +9,10 @@ protected:
     string truongDo;
 public:
     Note(string cd = "Z", string td = "1");
-    virtual bool checkLangDen();
+    virtual bool isLangDen();
     string getCaoDo();
     string getTruongDo();
-    bool checkNote();
+    bool isNote();
 };
 
 class Music : public Note {
@@ -29,7 +29,7 @@ Note::Note(string cd, string td) {
     truongDo = td;
 }
 
-bool Note::checkLangDen() {
+bool Note::isLangDen() {
     return (caoDo == "Z" && truongDo == "1");
 }
 
@@ -41,7 +41,7 @@ string Note::getTruongDo() {
     return truongDo;
 }
 
-bool Note::checkNote() {
+bool Note::isNote() {
     string dsCaoDo[] = {"C", "D", "E", "F", "G", "A", "B", "Z"};
     string dsTruongDo[] = {"4", "2", "1", "1/2", "1/4", "1/8", "1/16"};
     bool cao = false, truong = false;
@@ -67,7 +67,7 @@ void Music::soanNhac(string chuoi) {
                     cd += tmp[j++];
                 td = tmp.substr(j);
                 Note n(cd, td);
-                if (n.checkNote()) {
+                if (n.isNote()) {
                     v.push_back(n);
                 }
                 tmp = "";
@@ -81,7 +81,7 @@ void Music::soanNhac(string chuoi) {
 void Music::demLangDen() {
     int count = 0;
     for (int i = 0; i < v.size(); i++) {
-        if (v[i].checkLangDen()) {
+        if (v[i].isLangDen()) {
             count++;
             cout << "Vi tri note thu: " << i + 1 << endl;
         }
