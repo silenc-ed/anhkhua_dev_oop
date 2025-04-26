@@ -115,25 +115,10 @@ int main() {
     cout << "Soan bai nhac (VD: C1 D1/2 E1/2 Z1 F2 ...): ";
     getline(cin, s);
     song.soanNhac(s);
-
-    int choice;
-    while (1) {
-        cout << "\n1. Dem so dau lang den (Z1)\n";
-        cout << "2. Tim not nhac co cao do cao nhat\n";
-        cout << "0. Thoat chuong trinh\n";
-        cout << "Nhap lua chon: ";
-        cin >> choice;
-        if (choice == 1)
-            song.demLangDen();
-        else if (choice == 2)
-            song.timCaoNhat();
-        else if (choice == 0)
-            break;
-        else {
-            cout << "Lua chon sai. Vui long nhap lai: ";
-            cin >> choice;
-        }
-    }
+    cout << "Dem so dau lang den (Z1): ";
+    song.demLangDen();
+    cout << "Not co cao do cao nhat: ";
+    song.timCaoNhat();
     return 0;
 }
 
