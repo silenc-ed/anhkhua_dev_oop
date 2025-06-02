@@ -55,8 +55,6 @@ char notnhac::getCaoDo() {
 bool daulang::isLangDen() {
     return getTruongDo() == 1;
 }
-
-
  
 int main() {
     
