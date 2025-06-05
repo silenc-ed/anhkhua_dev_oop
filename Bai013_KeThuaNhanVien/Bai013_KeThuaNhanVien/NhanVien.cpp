@@ -36,8 +36,8 @@ int NhanVienVanPhong::luong() {
 	return soNgayLamViec * 100000;
 }
 
-void NhanVienSanXuat::xuatNVXS() {
+void NhanVienSanXuat::xuatNVSX() {
 	cout << ten << endl;
 	cout << ngaysinh << endl;
-	cout << luong << endl;
+	cout << luong() << endl;
 }
